@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			img{display:none;position:absolute;width:50px;}
+		</style>
+	</head>
+	<body>
+		<button onclick="are(this)" id="hao"></button>
+		<button oncontextmenu="tu(event)">右键点击我，给你惊喜</button>
+		<img src="img/liyunlong.png">
+	</body>
+</html>
+<script>
+	let zhang = 0
+	let zi =['点击我，我就打死你','我是超人(小徐)','超人小徐来也','大胆妖孽','看我小徐吊打你','吃我小徐一棍','小徐和妖孽久久不能分胜负','后小徐师傅来也','妖孽看以一敌二心升退意','小徐师傅识破妖孽意图','和小徐包夹妖孽问妖孽投降吗？','妖孽宁死不屈','许久过后……','小徐大获全胜','吃了妖孽肉']
+	let hao = document.getElementById('hao')
+	hao.innerHTML=zi[zhang]
+	function are(w){
+		zhang++
+		if(zhang==zi.length){
+			zhang=0
+		}
+		hao.innerHTML=zi[zhang]
+		
+	}
+	function tu(e){
+		let tu = document.querySelector('img')
+		tu.style.display="block"
+		tu.style.top=e.clientY+"px"
+		tu.style.left=e.clientX+"px";
+		e.preventDefault()
+	}
+</script>
